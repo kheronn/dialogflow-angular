@@ -9,17 +9,18 @@
   <div class="row align-items-center justify-content-center">
     <div class="col-lg-8">
       <ul #scrollMe class="messages">
-        <div  *ngFor="let msg of resultados " >
-        <li class="message appeared" [ngClass]="{'left':msg.remetente === 'boot',
+        <div *ngFor="let msg of resultados ">
+          <li class="message appeared" [ngClass]="{'left':msg.remetente === 'boot',
                         'right':msg.remetente === 'eu'     }">
-          <div class="avatar"></div>
-
-          <div class="text_wrapper">
-            <p> <span class="time_date">({{msg.data | date:'HH:mm:ss'}})</span></p>
-            <div class="text"> {{msg.mensagem}}</div>
-          </div>
-        </li>
-      </div>
+            <div class="avatar"></div>
+            <div class="text_wrapper">
+              <div class="text">
+                <p class="time"> ({{msg.data | date:'HH:mm:ss'}})</p>
+                {{msg.mensagem}}
+              </div>
+            </div>
+          </li>
+        </div>
       </ul>
     </div>
   </div>
