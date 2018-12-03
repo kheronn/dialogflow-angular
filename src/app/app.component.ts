@@ -35,7 +35,7 @@ export class AppComponent {
   }
 
   sendMessage() {
-    this.resultados.push({ remetente: 'eu', mensagem: this.msg , data: new Date()})
+    this.resultados.push({ remetente: 'eu', mensagem: this.msg, data: new Date() })
     this.chatBoot.getResponse(this.removerAcentos(this.msg))
       .subscribe((lista: any) => {
         lista.result.fulfillment.messages.forEach((element) => {
@@ -53,7 +53,6 @@ export class AppComponent {
       this.myScrollContainer.nativeElement.scrollTop = this.myScrollContainer.nativeElement.scrollHeight;
     } catch (err) { }
   }
-
 
   private removerAcentos(s) {
     return s.normalize('NFD').replace(/[\u0300-\u036f]/g, "")

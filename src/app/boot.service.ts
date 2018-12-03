@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -8,8 +7,10 @@ import { map } from 'rxjs/operators';
 export class BootService {
 
   private baseURL: string = "https://api.dialogflow.com/v1/query?v=20150910";
-  private token: string = '20595fa274c54aaaa8dae5a9516aeeed'
+  private token: string = 'SEU TOKEN'
+
   constructor(private http: HttpClient) { }
+
   public getResponse(query: string) {
     let data = {
       query: query,
